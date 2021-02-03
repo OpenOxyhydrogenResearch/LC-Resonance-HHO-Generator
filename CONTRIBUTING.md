@@ -1,7 +1,7 @@
 Contributing
 ------------
 
-To get started, <a href="https://cla-assistant.io/platformio/platformio-core">sign the Contributor License Agreement</a>.
+To get started, <a href="">sign the Contributor License Agreement</a>.
 
 1. Fork the repository on GitHub.
 2. Clone repository `git clone --recursive https://github.com/YourGithubUsername/platformio-core.git`
