@@ -1,2 +1,214 @@
+=================================================
 # LC-Resonance-HHO-Generator
-LC Resonance HHO Generator controller interface.
+=================================================
+
+[![Build Status](https://travis-ci.org/RDFLib/rdflib.png?branch=master)](https://travis-ci.org/RDFLib/rdflib)
+[![Coveralls branch](https://img.shields.io/coveralls/RDFLib/rdflib/master.svg)](https://coveralls.io/r/RDFLib/rdflib?branch=master)
+[![GitHub stars](https://img.shields.io/github/stars/RDFLib/rdflib.svg)](https://github.com/RDFLib/rdflib/stargazers)
+[![PyPI](https://img.shields.io/pypi/v/rdflib.svg)](https://pypi.python.org/pypi/rdflib)
+[![PyPI](https://img.shields.io/pypi/pyversions/rdflib.svg)](https://pypi.python.org/pypi/rdflib)
+
+OPEN OXYHYDROGEN RESEARCH LC Resonance HHO Generator controller interface firmware.
+
+![](https://cdn.platformio.org/images/platformio-logo.17fdc3bc.png)
+![](https://www.arduino.cc/en/uploads/Main/ARDUINO_logo.jpg)
+![](https://media-exp1.licdn.com/dms/image/C560BAQGFWFLHobX6sQ/company-logo_200_200/0/1519856406247?e=1620259200&v=beta&t=-PXQc9Igbup99mD3PI94Mz9MvumjhOdnBq7qGxd8bpM)
+
+## Table of Contents: 
+ 1. About
+ 1. Installation
+ 1. Usage
+ 1. Contributing
+ 1. Credits
+ 1. License
+
+## About:
+OPEN OXYHYDROGEN RESEARCH FOUNDATION is a global consortium of organizations and individuals actively collaborating and contributing to the promotion and dissemination of information related to the practical uses of industrial applications of LC Parallel or Series Resonant Circuits to achieve very high efficiencies in the decomposition of water molecules into hydrogen and oxygen elements.
+    #electrolysis#: 2 H2 O → 2 H2 + O2
+    #combustion#: 2 H2 + O2 → 2 H2O
+Water in its aqueous form can be economically separated at the source of generation into either, high purity supplies of hydrogen and Oxygen gases , or simply combined as a gaseous mixture of Oxyhydrogen (aka HHO, Brown's Gas) gases depending on the desired applications.
+
+## Installation: 
+Installation is the next section in an effective README. Tell other users how to install your project locally. Optionally, include a gif to make the process even more clear for other people.
+
+## Usage: 
+The next section is usage, in which you instruct other people on how to use your project after they’ve installed it. This would also be a good place to include screenshots of your project in action.
+
+##Contributing: 
+Larger projects often have sections on contributing to their project, in which contribution instructions are outlined. Sometimes, this is a separate file. If you have specific contribution preferences, explain them so that other developers know how to best contribute to your work. To learn more about how to help others contribute, check out the guide for setting guidelines for repository contributors.
+
+## Credits: 
+Include a section for credits in order to highlight and link to the authors of your project.
+
+## License: 
+Finally, include a section for the license of your project. For more information on choosing a license, check out GitHub’s licensing guide!
+
+
+
+
+RDFLib is a pure Python package for working with [RDF](http://www.w3.org/RDF/). RDFLib contains most things you need to work with RDF, including:
+
+* parsers and serializers for RDF/XML, N3, NTriples, N-Quads, Turtle, TriX, Trig and JSON-LD (via a plugin).
+* a Graph interface which can be backed by any one of a number of Store implementations
+* store implementations for in-memory storage and persistent storage on top of the Berkeley DB
+* a SPARQL 1.1 implementation - supporting SPARQL 1.1 Queries and Update statements
+
+## RDFlib Family of packages
+The RDFlib community maintains many RDF-related Python code repositories with different purposes. For example:
+
+* [rdflib](https://github.com/RDFLib/rdflib) - the RDFLib core
+* [sparqlwrapper](https://github.com/RDFLib/sparqlwrapper) - a simple Python wrapper around a SPARQL service to remotely execute your queries
+* [pyLODE](https://github.com/RDFLib/pyLODE) - An OWL ontology documentation tool using Python and templating, based on LODE.
+* [rdflib-jsonld](https://github.com/RDFLib/rdflib-jsonld) - an RDFLib plugin that is an implementation of JSON-LD
+
+Please see the list for all packages/repositories here:
+
+* <https://github.com/RDFLib>
+
+
+## Versions
+
+ * `5.x.y` supports Python 2.7 and 3.4+ and is [mostly backwards compatible with 4.2.2](https://rdflib.readthedocs.io/en/stable/upgrade4to5.html). Only bug fixes will be applied.
+ * `6.x.y` is the next major release which will support Python 3.6+. (Current master branch)
+
+
+## Installation
+RDFLib may be installed with Python's package management tool *pip*:
+
+    $ pip install rdflib
+
+Alternatively manually download the package from the Python Package
+Index (PyPI) at https://pypi.python.org/pypi/rdflib
+
+The current version of RDFLib is 5.0.0, see the ``CHANGELOG.md``
+file for what's new in this release.
+
+
+## Getting Started
+RDFLib aims to be a pythonic RDF API. RDFLib's main data object is a `Graph` which is a Python collection
+of RDF *Subject, Predicate, Object* Triples:
+
+To create graph and load it with RDF data from DBPedia then print the results:
+
+```python
+import rdflib
+g = rdflib.Graph()
+g.load('http://dbpedia.org/resource/Semantic_Web')
+
+for s, p, o in g:
+    print(s, p, o)
+```
+The components of the triples are URIs (resources) or Literals
+(values).
+
+URIs are grouped together by *namespace*, common namespaces are
+included in RDFLib:
+
+```python
+from rdflib.namespace import DC, DCTERMS, DOAP, FOAF, SKOS, OWL, RDF, RDFS, VOID, XMLNS, XSD
+```
+
+You can use them like this:
+
+```python
+semweb = rdflib.URIRef('http://dbpedia.org/resource/Semantic_Web')
+type = g.value(semweb, rdflib.RDFS.label)
+```
+Where `rdflib.RDFS` is the RDFS Namespace, `graph.value` returns an
+object of the triple-pattern given (or an arbitrary one if more
+exist).
+
+Or like this, adding a triple to a graph `g`:
+
+```python
+g.add((
+    rdflib.URIRef("http://example.com/person/nick"),
+    FOAF.givenName,
+    rdflib.Literal("Nick", datatype=XSD.string)
+))
+```
+The triple (in n-triples notation) `<http://example.com/person/nick> <http://xmlns.com/foaf/0.1/givenName> "Nick"^^<http://www.w3.org/2001/XMLSchema#string> .` 
+is created where the property `FOAF.giveName` is the URI `<http://xmlns.com/foaf/0.1/givenName>` and `XSD.string` is the 
+URI `<http://www.w3.org/2001/XMLSchema#string>`.
+
+You can bind namespaces to prefixes to shorten the URIs for RDF/XML, Turtle, N3, TriG, TriX & JSON-LD serializations:
+
+ ```python
+g.bind("foaf", FOAF)
+g.bind("xsd", XSD)
+```
+This will allow the n-triples triple above to be serialised like this:
+ ```python
+print(g.serialize(format="turtle"))
+```
+
+With these results:
+```turtle
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+<http://example.com/person/nick> foaf:givenName "Nick"^^xsd:string .
+```
+
+New Namespaces can also be defined:
+
+```python
+dbpedia = rdflib.Namespace('http://dbpedia.org/ontology/')
+
+abstracts = list(x for x in g.objects(semweb, dbpedia['abstract']) if x.language=='en')
+```
+
+See also [./examples](./examples)
+
+
+## Features
+The library contains parsers and serializers for RDF/XML, N3,
+NTriples, N-Quads, Turtle, TriX, RDFa and Microdata. JSON-LD parsing/serializing can be achieved using the 
+[JSON-LD plugin](https://github.com/RDFLib/rdflib-jsonld).
+
+The library presents a Graph interface which can be backed by
+any one of a number of Store implementations.
+
+This core RDFLib package includes store implementations for
+in-memory storage and persistent storage on top of the Berkeley DB.
+
+A SPARQL 1.1 implementation is included - supporting SPARQL 1.1 Queries and Update statements.
+
+RDFLib is open source and is maintained on [GitHub](https://github.com/RDFLib/rdflib/). RDFLib releases, current and previous
+are listed on [PyPI](https://pypi.python.org/pypi/rdflib/)
+
+Multiple other projects are contained within the RDFlib "family", see <https://github.com/RDFLib/>.
+
+
+## Documentation
+See <https://rdflib.readthedocs.io> for our documentation built from the code.
+
+
+## Support
+For general "how do I..." queries, please use https://stackoverflow.com and tag your question with `rdflib`. 
+Existing questions:
+
+* <https://stackoverflow.com/questions/tagged/rdflib>
+
+
+## Releases
+See <https://rdflib.dev> for the release schedule.
+
+
+## Contributing
+
+RDFLib survives and grows via user contributions!
+Please read our [contributing guide](https://rdflib.readthedocs.io/en/stable/developers.html) to get started.
+Please consider lodging Pull Requests here:
+
+* <https://github.com/OPEN-OXYHYDROGEN-RESEARCH/LC-Resonance-HHO-Generator/pulls>
+
+You can also raise issues here:
+
+* <https://github.com/OPEN-OXYHYDROGEN-RESEARCH/LC-Resonance-HHO-Generator/issues>
+
+
+## Contacts
+If you want to contact the repo maintainers, please do so via the following mailing list:
+
+* <https://groups.google.com/group/rdflib-dev>
