@@ -1,0 +1,263 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="UIXConfig">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ApplicationStates">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="AppState" maxOccurs="unbounded" minOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="AppModes">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="mode" maxOccurs="unbounded" minOccurs="1">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:byte">
+                                  <xs:attribute type="xs:byte" name="id" use="optional"/>
+                                  <xs:attribute type="xs:string" name="desc" use="optional"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ScreenObjects">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="LCDCharacterLine" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:choice maxOccurs="unbounded" minOccurs="0">
+                                <xs:element name="DispTitle">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="textObj" maxOccurs="unbounded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                              <xs:attribute type="xs:byte" name="id" use="optional"/>
+                                              <xs:attribute type="xs:string" name="desc" use="optional"/>
+                                              <xs:attribute type="xs:byte" name="xpos_min" use="optional"/>
+                                              <xs:attribute type="xs:byte" name="xpos_max" use="optional"/>
+                                              <xs:attribute type="xs:byte" name="xcount" use="optional"/>
+                                              <xs:attribute type="xs:string" name="align" use="optional"/>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute type="xs:byte" name="id" use="optional"/>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="textObj">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute type="xs:byte" name="id" use="optional"/>
+                                        <xs:attribute type="xs:string" name="desc" use="optional"/>
+                                        <xs:attribute type="xs:byte" name="xpos_min" use="optional"/>
+                                        <xs:attribute type="xs:byte" name="xpos_max" use="optional"/>
+                                        <xs:attribute type="xs:byte" name="xcount" use="optional"/>
+                                        <xs:attribute type="xs:string" name="align" use="optional"/>
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="DispFrequency">
+                                  <xs:complexType mixed="true">
+                                    <xs:sequence>
+                                      <xs:element name="freqValue" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:float">
+                                              <xs:attribute type="xs:byte" name="id" use="optional"/>
+                                              <xs:attribute type="xs:string" name="desc" use="optional"/>
+                                              <xs:attribute type="xs:byte" name="xpos_min" use="optional"/>
+                                              <xs:attribute type="xs:byte" name="xpos_max" use="optional"/>
+                                              <xs:attribute type="xs:byte" name="xcount" use="optional"/>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="unitPrefix" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="prefix" maxOccurs="unbounded" minOccurs="0">
+                                              <xs:complexType>
+                                                <xs:simpleContent>
+                                                  <xs:extension base="xs:string">
+                                                    <xs:attribute type="xs:byte" name="id" use="optional"/>
+                                                    <xs:attribute type="xs:string" name="desc" use="optional"/>
+                                                    <xs:attribute type="xs:string" name="default_value" use="optional"/>
+                                                  </xs:extension>
+                                                </xs:simpleContent>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute type="xs:byte" name="id" use="optional"/>
+                                          <xs:attribute type="xs:string" name="desc" use="optional"/>
+                                          <xs:attribute type="xs:byte" name="xpos_min" use="optional"/>
+                                          <xs:attribute type="xs:byte" name="xpos_max" use="optional"/>
+                                          <xs:attribute type="xs:byte" name="xcount" use="optional"/>
+                                          <xs:attribute type="xs:string" name="mode" use="optional"/>
+                                          <xs:attribute type="xs:byte" name="selected" use="optional"/>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="dispUnit" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                              <xs:attribute type="xs:byte" name="id" use="optional"/>
+                                              <xs:attribute type="xs:string" name="desc" use="optional"/>
+                                              <xs:attribute type="xs:byte" name="xpos_min" use="optional"/>
+                                              <xs:attribute type="xs:byte" name="xpos_max" use="optional"/>
+                                              <xs:attribute type="xs:byte" name="xcount" use="optional"/>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute type="xs:byte" name="id" use="optional"/>
+                                    <xs:attribute type="xs:string" name="desc" use="optional"/>
+                                    <xs:attribute type="xs:byte" name="xpos_min" use="optional"/>
+                                    <xs:attribute type="xs:byte" name="xpos_max" use="optional"/>
+                                    <xs:attribute type="xs:byte" name="xcount" use="optional"/>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="DispIdentifier">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute type="xs:byte" name="id" use="optional"/>
+                                        <xs:attribute type="xs:string" name="desc" use="optional"/>
+                                        <xs:attribute type="xs:byte" name="xpos_min" use="optional"/>
+                                        <xs:attribute type="xs:byte" name="xpos_max" use="optional"/>
+                                        <xs:attribute type="xs:byte" name="xcount" use="optional"/>
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="DispDuration">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="durationValue">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:byte">
+                                              <xs:attribute type="xs:byte" name="id"/>
+                                              <xs:attribute type="xs:string" name="desc"/>
+                                              <xs:attribute type="xs:byte" name="xpos_min"/>
+                                              <xs:attribute type="xs:byte" name="xpos_max"/>
+                                              <xs:attribute type="xs:byte" name="xcount"/>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="dispUnit">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                              <xs:attribute type="xs:byte" name="id"/>
+                                              <xs:attribute type="xs:string" name="desc"/>
+                                              <xs:attribute type="xs:byte" name="xpos_min"/>
+                                              <xs:attribute type="xs:byte" name="xpos_max"/>
+                                              <xs:attribute type="xs:byte" name="xcount"/>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute type="xs:byte" name="id"/>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="DispDutyCycle">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="dutyCycle">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:float">
+                                              <xs:attribute type="xs:byte" name="id"/>
+                                              <xs:attribute type="xs:string" name="desc"/>
+                                              <xs:attribute type="xs:byte" name="xpos_min"/>
+                                              <xs:attribute type="xs:byte" name="xpos_max"/>
+                                              <xs:attribute type="xs:byte" name="xcount"/>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="dispUnit">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                              <xs:attribute type="xs:byte" name="id"/>
+                                              <xs:attribute type="xs:string" name="desc"/>
+                                              <xs:attribute type="xs:byte" name="xpos_min"/>
+                                              <xs:attribute type="xs:byte" name="xpos_max"/>
+                                              <xs:attribute type="xs:byte" name="xcount"/>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute type="xs:byte" name="id"/>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="DispVoltage">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="voltageValue">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:float">
+                                              <xs:attribute type="xs:byte" name="id"/>
+                                              <xs:attribute type="xs:string" name="desc"/>
+                                              <xs:attribute type="xs:byte" name="xpos_min"/>
+                                              <xs:attribute type="xs:byte" name="xpos_max"/>
+                                              <xs:attribute type="xs:byte" name="xcount"/>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="dispUnit">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                              <xs:attribute type="xs:byte" name="id"/>
+                                              <xs:attribute type="xs:string" name="desc"/>
+                                              <xs:attribute type="xs:byte" name="xpos_min"/>
+                                              <xs:attribute type="xs:byte" name="xpos_max"/>
+                                              <xs:attribute type="xs:byte" name="xcount"/>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute type="xs:byte" name="id"/>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:choice>
+                              <xs:attribute type="xs:byte" name="num" use="optional"/>
+                              <xs:attribute type="xs:byte" name="max_char" use="optional"/>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:byte" name="id" use="optional"/>
+                  <xs:attribute type="xs:string" name="name" use="optional"/>
+                  <xs:attribute type="xs:string" name="desc" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="locale"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

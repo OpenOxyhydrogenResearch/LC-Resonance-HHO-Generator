@@ -1,0 +1,45 @@
+root = ..
+
+!include $(root)\build\config.nmake
+!include $(root)\build\c\rules.nmake
+!include $(root)\build\cxx\rules.nmake
+
+EXTRA_CPPFLAGS = /I..
+
+#########################################################################
+
+src = main.cpp
+
+#
+#
+obj = $(src:.cxx=.obj)
+obj = $(obj:.c=.obj)
+
+
+# Build.
+#
+main.exe: $(obj)
+	$(AR) $(ARFLAGS) /OUT:$@ $**
+!if "$(RANLIB)" != ""
+	$(RANLIB) $@
+!endif
+
+
+# Generated.
+#
+gen:
+
+
+# Test.
+#
+test: main.exe
+
+# Clean.
+#
+# Nmake that comes with eVC++ 4 cannot handle del $(obj)
+# because the resulting line is too long.
+#
+cleanobj:
+	-del main.exe
+
+clean: cleanobj

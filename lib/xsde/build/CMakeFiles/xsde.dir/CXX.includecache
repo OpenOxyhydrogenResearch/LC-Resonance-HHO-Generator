@@ -1,0 +1,12 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/The_E/OneDrive/Documents/PlatformIO/Projects/xsde-3.2.0-1+dep/xsde/main.cpp
+iostream
+-
+

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<UIXConfig locale="JM-EN">
+
+    <ApplicationStates>
+
+        <AppState id="0" name="SplashScreen" desc="Boot Loader Screen">
+            <AppModes>
+                <mode id="0" desc="Boot up sequence.">0</mode>
+            </AppModes>
+            <ScreenObjects>
+                <LCDCharacterLine num="0" max_char="16">
+                    <DispTitle id="0">
+                        <textObj id="0" desc="Displays Water Molecule icon." xpos_min="0" xpos_max="0" xcount="1">[CUSTOM_WATER_MOLECULE]</textObj>
+                        <textObj id="1" desc="Application screen title." xpos_min="1" xpos_max="14" xcount="14" align="center">SCANNING RANGE</textObj>
+                        <textObj id="2" desc="Displays Water Molecule icon." xpos_min="15" xpos_max="15" xcount="1">[CUSTOM_WATER_MOLECULE]</textObj>
+                    </DispTitle>
+                </LCDCharacterLine>
+                <LCDCharacterLine num="1" max_char="16">
+                    <textObj id="0" desc="Application screen title." xpos_min="0" xpos_max="10" xcount="11" align="left">GENERATOR v</textObj>
+                    <textObj id="1" desc="Application screen title." xpos_min="11" xpos_max="11" xcount="11" align="left">9.99?</textObj>
+                </LCDCharacterLine>
+            </ScreenObjects>
+        </AppState>
+
+        <AppState id="1" name="ResonanceScanning" desc="Resonance scanning screen">
+            <AppModes>
+                <mode id="0" desc="Resonance frequency scanning mode.">0</mode>
+            </AppModes>
+            <ScreenObjects>
+                <LCDCharacterLine num="0" max_char="16">
+                    <DispTitle id="0">
+                        <textObj id="0" desc="Application screen title." xpos_min="0" xpos_max="15" xcount="16" align="center">SCANNING RANGE</textObj>
+                    </DispTitle>
+                </LCDCharacterLine>
+                <LCDCharacterLine num="1" max_char="16">
+                    <DispFrequency id="0">
+                        <freqValue id="0" desc="Resonance scanning frequency value." xpos_min="1" xpos_max="6" xcount="6">009.99</freqValue>
+                        <unitPrefix id="1" desc="Resonance scanning frequency prefix." xpos_min="7" xpos_max="7" xcount="1" mode="option" selected="0">
+                            <prefix id="0" desc="Frequency unit in hertz (Hz)" default_value=" " />
+                            <prefix id="1" desc="Frequency unit in kilo hertz (kHz)">K</prefix>
+                            <prefix id="2" desc="Frequency unit in mega hertz (MHz)">M</prefix>
+                        </unitPrefix>
+                        <dispUnit id="2" desc="Dispays unit of frequency i.e. hertz (Hz)" xpos_min="8" xpos_max="9" xcount="2">Hz</dispUnit>
+                    </DispFrequency>
+                    <DispIdentifier id="1" desc="Resonance scanning frequency lock identicator." xpos_min="11" xpos_max="11" xcount="1">[CUSTOM_LOCK]</DispIdentifier>
+                    <DispDuration id="2">
+                        <durationValue id="0" desc="Resonace scanning duration value." xpos_min="12" xpos_max="13" xcount="2">09</durationValue>
+                        <dispUnit id="1" desc="Dispays unit of duration in seconds (s)" xpos_min="14" xpos_max="14" xcount="1">s</dispUnit>
+                    </DispDuration>
+                </LCDCharacterLine>
+            </ScreenObjects>
+        </AppState>
+
+        <AppState id="2" name="HomeScreen" desc="Boot Loader Screen">
+            <AppModes>
+                <mode id="0" desc="Automatic resonance scanning mode.">0</mode>
+                <mode id="1" desc="Manual fine tuning mode.">1</mode>
+            </AppModes>
+            <ScreenObjects>
+                <LCDCharacterLine num="0" max_char="16">
+                    <DispIdentifier id="0" desc="Gate Trigger frequency identifier." xpos_min="0" xpos_max="0" xcount="1">G</DispIdentifier>
+                    <DispFrequency id="1">
+                        <freqValue id="0" desc="Gate Trigger frequency value." xpos_min="1" xpos_max="6" xcount="6">009.99</freqValue>
+                        <unitPrefix id="1" desc="Gate Trigger frequency prefix." xpos_min="7" xpos_max="7" xcount="1" mode="option" selected="0">
+                            <prefix id="0" desc="Frequency unit in hertz (Hz)" default_value=" " />
+                            <prefix id="1" desc="Frequency unit in kilo hertz (kHz)">K</prefix>
+                            <prefix id="2" desc="Frequency unit in mega hertz (MHz)">M</prefix>
+                        </unitPrefix>
+                        <dispUnit id="2" desc="Dispays unit of frequency as hertz (Hz)" xpos_min="8" xpos_max="9" xcount="2">Hz</dispUnit>
+                    </DispFrequency>
+                    <DispIdentifier id="2" desc="Gate duty cycle identifier." xpos_min="10" xpos_max="10" xcount="1">@</DispIdentifier>
+                    <DispDutyCycle id="3">
+                        <dutyCycle id="0" desc="Gate duty cycle value." xpos_min="11" xpos_max="14" xcount="4">09.9</dutyCycle>
+                        <dispUnit id="1" desc="Dispays unit of duty cycle as percentage (%)" xpos_min="15" xpos_max="15" xcount="1">%</dispUnit>
+                    </DispDutyCycle>
+                </LCDCharacterLine>
+                <LCDCharacterLine num="1" max_char="16">
+                    <DispIdentifier id="0" desc="Pulse Trigger frequency identifier." xpos_min="0" xpos_max="0" xcount="1">P</DispIdentifier>
+                    <DispFrequency id="1">
+                        <freqValue id="0" desc="Pulse Trigger frequency value." xpos_min="1" xpos_max="6" xcount="6">009.99</freqValue>
+                        <unitPrefix id="1" desc="Pulse Trigger frequency prefix." xpos_min="7" xpos_max="7" xcount="1" mode="option" selected="0">
+                            <prefix id="0" desc="Frequency unit in hertz (Hz)" default_value=" " />
+                            <prefix id="1" desc="Frequency unit in kilo hertz (kHz)">K</prefix>
+                            <prefix id="2" desc="Frequency unit in mega hertz (MHz)">M</prefix>
+                        </unitPrefix>
+                        <dispUnit id="2" desc="Dispays unit of frequency i.e. hertz (Hz)" xpos_min="8" xpos_max="9" xcount="2">Hz</dispUnit>
+                    </DispFrequency>
+                    <DispIdentifier id="2" desc="Resonance frequency lock identicator." xpos_min="10" xpos_max="10" xcount="1">[CUSTOM_LOCK]</DispIdentifier>
+                    <DispIdentifier id="3" desc="Resonance output voltage identifier." xpos_min="11" xpos_max="11" xcount="1">O</DispIdentifier>
+                    <DispVoltage id="4">
+                        <voltageValue id="0" desc="Pulse output voltage value." xpos_min="12" xpos_max="14" xcount="3">9.9</voltageValue>
+                        <dispUnit id="1" desc="Dispays unit of voltage in volts (V)" xpos_min="15" xpos_max="15" xcount="1">V</dispUnit>
+                    </DispVoltage>
+                </LCDCharacterLine>
+            </ScreenObjects>
+        </AppState>
+
+    </ApplicationStates>
+
+</UIXConfig>
