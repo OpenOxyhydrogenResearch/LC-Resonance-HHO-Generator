@@ -1,0 +1,40 @@
+
+
+xsde_path = SConsEnvironment("xsde_path")
+print(xsde_path)
+
+xsde_bin = env.GetProjectOption("xsde_bin")
+cxx_hybrid = (" cxx-hybrid " if env.GetProjectOption("cxx-hybrid")==true else "" )
+generate_parser = (" --generate-parser " if env.GetProjectOption("generate-parser")==true else "" )
+generate_serialize = (" --generate-serializer " if env.GetProjectOption("generate-serializer")==true else "" )
+generate_aggregate = (" --generate-aggregate " if env.GetProjectOption("generate-aggregate")==true else "" )
+output_dir = ((" --output-dir "+env.GetProjectOption("output-dir")+" ") if env.GetProjectOption("output-dir")!="" else "" )
+xml_data_file = ((" "+env.GetProjectOption("xml_data_file")+" ") if env.GetProjectOption("xml_data_file")!="" else "" )
+
+def mytarget_callback(*args, **kwargs):
+    print("Hello PlatformIO!")
+    env.Execute(xsde_path + xsde_bin + " " \
+        + cxx_hybrid + generate_parser + generate_serialize + generate_aggregate \
+        + output_dir + xml_data_file)
+
+env.AddCustomTarget("xsde", None, mytarget_callback)
+
+
+
+# extra_scripts = pre:extra_script.py
+
+xsde_path = .\tools\windows\xsde-3.2.0-i686-windows\bin\
+xsde_bin = xsde.exe
+cxx-hybrid = true
+generate-parser = true
+generate-serializer = false
+generate-aggregate = true
+output-dir = .\include\UIX_SCHEMA\
+xml_data_file = uix_schema.xsd
+
+
+
+lib_extra_dirs = 
+	C:\Users\The_E\OneDrive\Documents\PlatformIO\Projects\H20-DECOMPOSITION\tools\windows\xsde-3.2.0-i686-windows\libxsde\
+	C:\Users\The_E\OneDrive\Documents\PlatformIO\Projects\H20-DECOMPOSITION\tools\windows\xsde-3.2.0-i686-windows\libxsde\c\
+	C:\Users\The_E\OneDrive\Documents\PlatformIO\Projects\H20-DECOMPOSITION\tools\windows\xsde-3.2.0-i686-windows\libxsde\cxx\
