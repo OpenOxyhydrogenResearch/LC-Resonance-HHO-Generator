@@ -1,0 +1,15 @@
+libcult is a collection of c++ libraries that were designed to form
+a cohesive union of clean, simple and readable c++ code that uses
+the most powerful mechanisms available on the GNU development platform.
+
+See the NEWS file for the user-visible changes from the previous release.
+
+See the LICENSE file for distribution conditions.
+
+See the INSTALL file for prerequisites and installation instructions.
+
+See the documentation/index.xhtml file for documentation.
+
+The project page is at http://kolpackov.net/projects/c++/libcult/.
+
+Send bug reports or any other feedback to boris@kolpackov.net .

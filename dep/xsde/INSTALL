@@ -1,0 +1,48 @@
+Compiler Prerequisites
+
+  build-time:
+
+    - build                >= 0.3.7   http://www.codesynthesis.com/projects/build/
+    - g++                  >= 3.4.3   http://gcc.gnu.org
+
+  run-time:
+
+    - libxsd-frontend      >= 1.18.0  http://www.codesynthesis.com/projects/libxsd-frontend/
+    - libbackend-elements  >= 1.7.2   http://kolpackov.net/projects/libbackend-elements/
+    - libcult              >= 1.4.6   http://kolpackov.net/projects/libcult/
+    - libboost_filesystem  >= 1.33.1  http://boost.org
+    - libboost_regex       >= 1.33.1  http://boost.org
+
+Generated Code Prerequisites
+
+  run-time:
+
+    - libxsde (XSD/e runtime library, part of the XSD/e distribution)
+
+
+Building XSD/e
+
+  To build in the source directory simply run 'make'. You can also
+  build in a separate directory, e.g.,
+
+  $ mkdir xsde-i686-pc-linux-gnu
+  $ cd xsde-i686-pc-linux-gnu
+  $ make -f ../xsde-x.y.z/makefile
+
+
+Creating Binary Distributions
+
+  A binary distribution contains a pre-built XSD/e compiler binary for
+  a particular host development platform as well as the source code and
+  simple build systems for the libxsde runtime library and examples.
+
+  The dist and dist-win make targets are used to create binary distributions,
+  for example:
+
+  $ make dist_prefix=/tmp/xsde-3.1.0-i686-linux-gnu dist
+  $ make dist_prefix=/tmp/xsde-3.1.0-i686-windows dist-win
+
+
+Installing XSD/e
+
+  Not supported in this version.

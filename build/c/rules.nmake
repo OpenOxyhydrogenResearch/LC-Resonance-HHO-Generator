@@ -1,0 +1,13 @@
+# file      : build/c/rules.nmake
+# author    : OPEN OXYHYDROGEN RESEARCH <OpenOxyHydrogen@gmail.com>
+# copyright : Copyright (c) 2021 OPEN OXYHYDROGEN RESEARCH FOUNDATION
+# license   : GNU GPL v3 + exceptions; see accompanying LICENSE file
+
+!include $(root)\build\cxx\config.nmake
+
+# Rules.
+#
+.SUFFIXES: .c .obj
+
+.c.obj:
+	$(CC) $(CPPFLAGS) $(EXTRA_CPPFLAGS) $(CFLAGS) /c $< /Fo$@

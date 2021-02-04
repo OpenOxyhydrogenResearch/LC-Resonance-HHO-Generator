@@ -1,0 +1,19 @@
+# file      : build/cxx/rules.nmake
+# author    : OPEN OXYHYDROGEN RESEARCH <OpenOxyHydrogen@gmail.com>
+# copyright : Copyright (c) 2021 OPEN OXYHYDROGEN RESEARCH FOUNDATION
+# license   : GNU GPL v3 + exceptions; see accompanying LICENSE file
+
+!include $(root)\build\config.nmake
+
+# Rules.
+#
+.SUFFIXES: .cxx .exe .obj
+
+.cxx.obj:
+	$(CXX) $(CPPFLAGS) $(EXTRA_CPPFLAGS) $(CXXFLAGS) /c /TP $< /Fo$@
+
+.obj.exe:
+	$(LD) $(LDFLAGS) /OUT:$@ $** $(LIBS)
+!if "$(POSTLD)" != ""
+	$(POSTLD) $@ $** $(LIBS)
+!endif

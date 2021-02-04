@@ -1,0 +1,12 @@
+@@ typedef std::thread_cancel in cult::os::sched?
+
+@@ maybe define USE_CXX_UNWIND or something in pthread.h
+   so I can detect that?
+
+@@ rename auto_lock to lock?
+
+@@ maybe add sched::exception: os::exception i.e., "scheduling exception"?
+
+@@ I am throwing exceptions in sched::thread that are not derived from
+   sched::exception.
+   

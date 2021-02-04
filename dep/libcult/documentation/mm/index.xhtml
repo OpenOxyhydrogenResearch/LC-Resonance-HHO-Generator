@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<!--
+
+file      : documentation/mm/index.xhtml
+author    : Boris Kolpackov <boris@kolpackov.net>
+copyright : Copyright (c) 2005-2010 Boris Kolpackov
+license   : GNU FDL v1.2; http://kolpackov.net/licenses/fdl-1.2.txt
+
+-->
+
+<head>
+
+  <title>libcult/documentation/mm</title>
+
+  <meta name="author" content="Boris Kolpackov"/>
+  <meta name="copyright" content="&copy; 2005-2010 Boris Kolpackov"/>
+  <meta name="keywords" content="libcult,c++,memory,management"/>
+  <meta name="description" content="libcult/documentation/mm"/>
+
+  <link rel="stylesheet" type="text/css" href="../default.css"/>
+
+</head>
+
+<body>
+
+<div id="navigation">
+<p>
+<a href="../.."><code>libcult</code></a> <code>/</code>
+<a href=".."><code>documentation</code></a> <code>/</code>
+<code>mm</code>
+</p>
+</div>
+
+<div id="content">
+<p>The <em>libcult</em> memory management library provides
+non-intrusive reference counter and a couple of smart pointers.</p>
+
+<p>It also overrides and overloads default memory management operators
+(<code>operator new</code> and <code>operator delete</code>) to allow
+special service objects (reference counter being one of them) to be
+constructed in the memory block preceding the instance. This allows
+transparent <em>instrumentation</em> of objects with a special
+functionality like reference counting or locking.</p>
+
+<p>The two flavors of smart pointers are exclusive (called
+<code>Evptr</code>, from <b>e</b>xclusi<b>v</b>e
+<b>p</b>oin<b>t</b>e<b>r</b>) and shared (called <code>Shptr</code>,
+from <b>sh</b>ared <b>p</b>oin<b>t</b>e<b>r</b>) pointers.</p>
+
+<p>The exclusive pointer has semantics similar to <code>std::auto_ptr</code>
+(i.e., exclusive ownership of the object pointed to) except that it performs
+automatic copying of the object pointed to when copied or assigned to another
+exclusive pointer. Built-in copy-on-write optimization eliminates unnecessary
+copying when instances of exclusive pointers are returned from functions or
+stored in containers.</p>
+
+<p>The shared pointer has standard semantics of a reference-counting smart
+pointer.</p>
+</div>
+
+<div id="docinfo">
+<p>Copyright &copy; 2005-2010 <a title="Boris Kolpackov"
+href="http://kolpackov.net">Boris Kolpackov</a>.</p>
+
+<div class="terms">
+Permission is granted to copy, distribute and/or modify this document under
+the terms of the <a href="http://kolpackov.net/licenses/fdl-1.2.txt">GNU Free
+Documentation License, version 1.2</a>; with no Invariant Sections, no
+Front-Cover Texts and no Back-Cover Texts.
+</div>
+</div>
+
+</body>
+</html>

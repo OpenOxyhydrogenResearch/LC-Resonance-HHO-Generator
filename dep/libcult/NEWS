@@ -1,0 +1,126 @@
+Version 1.4.6
+
+  * Add support for deleting graph nodes.
+
+Version 1.4.5
+
+  * Add support for libcult bundling.
+
+  * Suppress warning in exception inheritance.
+
+Version 1.4.4
+
+  * Add an exception to the licensing terms to allow combining with
+    incompatibly-licensed modules in a single program. See the LICENSE
+    file for details.
+
+Version 1.4.3
+
+  * Remove leading and trailing whitespaces from arguments in
+    CLI::FileArguments.
+
+Version 1.4.2
+
+  * Support for stripping leading and (some) trailing whitespaces
+    in the FileArguments class.
+
+Version 1.4.1
+
+  * The number of options in CLI was increased from 80 to 100.
+
+  * Fixed a bug in import stubs.
+  
+  * Got rid of warnings reported by g++-4.3.
+
+Version 1.4.0
+
+  * New arguments scanners: BasicArguments and FileArguments.
+
+  * Conversion to narrow format in StringTemplate.
+
+Version 1.3.0
+
+  * Upgraded to build-0.3.0.
+
+Version 1.2.3
+
+  * Compilation time and generated code size optimizations in CLI.
+
+  * Set of typedefs in Containers::Iterator to be compatible with
+    std::iterator_traits.
+
+Version 1.2.2
+
+  * A bug in Cult::String has been fixed.
+
+Version 1.2.1
+
+  * The number of options in CLI was increased from 50 to 80.
+
+  * A bug in Containers::Any has been fixed.
+
+
+Version 1.2.0
+
+  * Containers::Graph now supports removal of edges.
+
+  * Added missing member functions to container wrappers.
+
+
+Version 1.1.0
+
+  * Generic, std::istream-based parser has been added to CLI parsers.
+
+  * Containers::IteratorAdapter has been modified to use
+    std::iterator_traits for better portability.
+
+  * Threading, networking and data representation subsystems were
+    made optional.
+
+
+Version 1.0.6
+
+  * Upgraded to build-0.2.1.
+
+
+Version 1.0.5
+
+  * Moved to the build 0.2 series.
+
+
+Version 1.0.4
+
+  * Containers::Graph has been extended to support more arguments in
+    the new_node() and new_edge() functions.
+
+
+Version 1.0.3
+
+  * MM::Counter has been re-implemented to use size_t instead of int
+    on i386 and x86_64.
+
+  * Containers::Graph has been extended to support more arguments in
+    the new_node() function.
+
+  * Fixed a bug in CLI::OptionsSpec that resulted in a wrong default
+    initialization of options.
+
+
+Version 1.0.2
+
+  * New Containers::List wrapper for std::list.
+
+  * CLI::OptionsParser now skips arguments instead of erasing them when
+    UnknownMode is set to skip.
+
+
+Version 1.0.1
+
+  * WideString can now be initialized with NarrowString and NarrowChar const*.
+
+  * Build system improvements.
+
+
+Version 1.0.0
+
+  * First public release.

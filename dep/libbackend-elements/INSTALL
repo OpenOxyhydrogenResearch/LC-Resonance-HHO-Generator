@@ -1,0 +1,26 @@
+Prerequisites
+
+  build-time:
+
+    - build          >= 0.3.2    http://kolpackov.net/projects/build/
+    - g++            >= 3.4.3    http://gcc.gnu.org
+
+  run-time:
+
+    - libcult        >= 1.4.1    http://kolpackov.net/projects/libcult/
+    - libboost_regex >= 1.33.1   http://boost.org
+    
+
+Building libbackend-elements
+
+  To build in the source directory simply say `make'. You can also
+  build in a separate directory, e.g.,
+
+  $ mkdir libbackend-elements-i686-pc-linux-gnu
+  $ cd libbackend-elements-i686-pc-linux-gnu
+  $ make -f ../libbackend-elements-x.y.z/makefile
+
+
+Installing libbackend-elements
+
+  Not supported in this version.

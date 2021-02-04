@@ -1,0 +1,12 @@
+
+@@ First layer include language usage policies (e.g. namespaces, eh)
+   and base libraries:
+   
+    eh, threading, memory management, tracing, containers
+
+@@ Tracing in libraries? Is it possible?
+    
+
+   
+   
+   

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<!--
+
+file      : documentation/eh/index.xhtml
+author    : Boris Kolpackov <boris@kolpackov.net>
+copyright : Copyright (c) 2005-2010 Boris Kolpackov
+license   : GNU FDL v1.2; http://kolpackov.net/licenses/fdl-1.2.txt
+
+-->
+
+<head>
+
+  <title>libcult/documentation/eh</title>
+
+  <meta name="author" content="Boris Kolpackov"/>
+  <meta name="copyright" content="&copy; 2005-2010 Boris Kolpackov"/>
+  <meta name="keywords" content="libcult,c++,exception,handling"/>
+  <meta name="description" content="libcult/documentation/eh"/>
+
+  <link rel="stylesheet" type="text/css" href="../default.css"/>
+
+</head>
+
+<body>
+
+<div id="navigation">
+<p>
+<a href="../.."><code>libcult</code></a> <code>/</code>
+<a href=".."><code>documentation</code></a> <code>/</code>
+<code>eh</code>
+</p>
+</div>
+
+<div id="content">
+<p>The <code>libcult</code> exception handling library defines a base
+exception type to be used by the rest of <code>libcult</code>. It has
+a very basic interface:</p>
+
+<pre class="cxx">
+namespace Cult
+{
+  namespace EH
+  {
+    class Exception: public virtual std::exception
+    {
+    public:
+      virtual char const*
+      what () const throw ();
+    };
+  }
+}
+</pre>
+
+<p>It derives from <code>std::exception</code> to allow catching
+all exceptions with a single handler. Default implementation of the
+<code>what()</code> member function returns type-name of the exception.
+</p>
+
+<p>Every non-trivial library in <em>libcult</em> derives its own
+base exception which all library-defined exceptions inherit. This
+way you can catch all exceptions from a library with one handler.</p>
+
+<p>Sometimes it may seem convenient to further partition (by providing
+corresponding base classes) exceptions space into <em>logic</em>
+exceptions (shared by all implementations) and <em>implementation</em>
+exceptions. For example, if you pass an allocator illegal size 0 then
+the allocator throws an exception which can be classified as a logic
+exception. If, however, you passed valid size but there is not enough
+memory then the allocator throws an exception which can be classified
+as an implementation exception<sup><a href="#fn1">1</a></sup>.</p>
+
+<p>The problem with this approach lies in the fact that someone's logic
+exception is someone else's implementation exception. Consider, for
+instance, a buffer type that is implemented in terms of our allocator.
+If the buffer happened to request a memory block of size 0 and let
+the exception propagate through the interface boundaries it is no longer
+a logic exception.</p>
+
+
+<div id="footnote">
+<hr/>
+<p id="fn1"><sup>1</sup> It can be argued that the
+<code>NoMemory</code> exception should rather be classified
+as logic. However, let's assume there are allocator implementations
+that have infinite memory.</p>
+</div>
+
+</div>
+
+<div id="docinfo">
+<p>Copyright &copy; 2005-2010 <a title="Boris Kolpackov"
+href="http://kolpackov.net">Boris Kolpackov</a>.</p>
+
+<div class="terms">
+Permission is granted to copy, distribute and/or modify this document under
+the terms of the <a href="http://kolpackov.net/licenses/fdl-1.2.txt">GNU Free
+Documentation License, version 1.2</a>; with no Invariant Sections, no
+Front-Cover Texts and no Back-Cover Texts.
+</div>
+</div>
+
+</body>
+</html>

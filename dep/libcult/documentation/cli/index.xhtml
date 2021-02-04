@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<!--
+
+file      : documentation/cli/index.xhtml
+author    : Boris Kolpackov <boris@kolpackov.net>
+copyright : Copyright (c) 2005-2010 Boris Kolpackov
+license   : GNU FDL v1.2; http://kolpackov.net/licenses/fdl-1.2.txt
+
+-->
+
+<head>
+
+  <title>libcult/documentation/cli</title>
+
+  <meta name="author" content="Boris Kolpackov"/>
+  <meta name="copyright" content="&copy; 2005-2010 Boris Kolpackov"/>
+  <meta name="keywords" content="libcult,c++,command,line,interface,option,argument"/>
+  <meta name="description" content="libcult/documentation/cli"/>
+
+  <link rel="stylesheet" type="text/css" href="../default.css"/>
+
+</head>
+
+<body>
+
+<div id="navigation">
+<p>
+<a href="../.."><code>libcult</code></a> <code>/</code>
+<a href=".."><code>documentation</code></a> <code>/</code>
+<code>cli</code>
+</p>
+</div>
+
+<div id="content">
+<p>The <em>libcult</em> command line interace library provides
+mechanisms for extracting informtaion from the command line. The
+following code fragment is from <code>libcult/examples/cli</code>:</p>
+
+<pre class="cxx">
+namespace
+{
+  extern Char const help[] = "help";
+  extern Char const version[] = "version";
+  extern Char const outdir[] = "outdir";
+}
+
+typedef
+CLI::Options&lt;help, Boolean,
+             version, Boolean,
+             outdir, String&gt;
+Options;
+
+Int
+main (Int argc, Char* argv[])
+{
+  try
+  {
+    Options options (CLI::parse&lt;Options&gt; (argc, argv));
+
+    if (options.value&lt;help&gt; ())
+    {
+      cerr &lt;&lt; "usage: " &lt;&lt; argv[0] &lt;&lt; " [--help] [--version] [--outdir &lt;dir&gt;]"
+           &lt;&lt; endl;
+      return 0;
+    }
+
+    if (options.value&lt;version&gt; ())
+    {
+      cerr &lt;&lt; argv[0] &lt;&lt; " 1.2.3" &lt;&lt; endl;
+      return 0;
+    }
+
+    if (String dir = options.value&lt;outdir&gt; ())
+    {
+      cerr &lt;&lt; "outdir: " &lt;&lt; dir &lt;&lt; endl;
+    }
+  }
+  catch (CLI::UnexpectedOption const&amp; e)
+  {
+    cerr &lt;&lt; "unexpected option " &lt;&lt; e.option () &lt;&lt;endl;
+  }
+  catch (CLI::OptionFormat const&amp; e)
+  {
+    cerr &lt;&lt; "bad format for " &lt;&lt; e.option () &lt;&lt; endl;
+  }
+}
+</pre>
+</div>
+
+<div id="docinfo">
+<p>Copyright &copy; 2005-2010 <a title="Boris Kolpackov"
+href="http://kolpackov.net">Boris Kolpackov</a>.</p>
+
+<div class="terms">
+Permission is granted to copy, distribute and/or modify this document under
+the terms of the <a href="http://kolpackov.net/licenses/fdl-1.2.txt">GNU Free
+Documentation License, version 1.2</a>; with no Invariant Sections, no
+Front-Cover Texts and no Back-Cover Texts.
+</div>
+</div>
+
+</body>
+</html>

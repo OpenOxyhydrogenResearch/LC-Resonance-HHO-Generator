@@ -1,0 +1,3 @@
+@@ SUS dlsym has some ideas about symbol interpositions.
+   This could be relevant to the problem of calling orginal
+   operator new.

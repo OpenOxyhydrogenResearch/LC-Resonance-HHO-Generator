@@ -1,0 +1,69 @@
+This archive contains pre-configured CodeSynthesis XSD/e source code 
+with all its dependencies (except Xerces-C++ and Boost). It allows 
+you to build the XSD/e compiler in non-interactive mode (that is,
+without answering any configuration questions).
+
+The following GNU tools are required to build XSD/e. Any fairly recent 
+GNU/Linux distribution should have these already installed:
+
+GNU bash >= 2.00   (bash --version)  http://www.gnu.org/software/bash/
+GNU m4   >= 1.4    (m4 --version)    http://www.gnu.org/software/m4/
+GNU make >= 3.81   (make --version)  http://www.gnu.org/software/make/
+GNU g++  >= 3.4.3  (g++ --version)   http://gcc.gnu.org/
+
+The build system expects you to have the Xerces-C++ (2.6.0 or later)
+as well as Boost filesystem and regex (1.33.1 or later) libraries
+built and installed in a location where the C++ compiler looks by
+default (normally /usr/lib/ and /usr/local/lib/). Alternatively, you
+can provide include (-I) and library (-L) paths for this packages via
+the CPPFLAGS and LDFLAGS variables, respectively.
+
+The build system supports the following variables:
+
+CXX               (defaults to g++ if not set)
+AR                (defaults to ar if not set)
+RANLIB            (defaults to ranlib if not set)
+CPPFLAGS
+CXXFLAGS
+LDFLAGS
+LIBS
+BOOST_LIB_SUFFIX
+BOOST_LINK_SYSTEM
+
+For example:
+
+$ make CXX=g++-4.2 CXXFLAGS=-O3 -j 4
+
+The BOOST_LIB_SUFFIX variable allows you to specify the optional
+Boost library suffix. For example, if your Boost library names are
+in the libboost_regex-gcc41-mt-d.so format, then you will need to
+set BOOST_LIB_SUFFIX to -gcc41-mt-d.
+
+The BOOST_LINK_SYSTEM variable allows you to specify whether the
+Boost system library should be explicitly linked to which may be
+required by newer linkers. The valid values are 'y' (default) and 
+'n'.
+
+If you would like to see the full compiler/linker/etc., command lines,
+you can add verbose=1 to the make command line:
+
+$ make verbose=1
+
+After the build is complete, the XSD/e compiler can be found in the 
+xsde/xsde/ directory. You can also create a distribution package with
+the XSD/e compiler binary, source code and build system for the runtime
+library and examples, as well as the documentation using the dist and
+dist-win targets, for example:
+
+$ make dist_prefix=./xsde-x.y.z dist
+
+Or, for Windows:
+
+$ make dist_prefix=./xsde-x.y.z dist-win
+
+The build system also supports the clean target:
+
+$ make clean
+
+Send bug reports or any other feedback to the xsde-users@codesynthesis.com
+mailing list.

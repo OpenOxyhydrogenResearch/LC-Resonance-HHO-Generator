@@ -1,0 +1,25 @@
+Prerequisites
+
+  build-time:
+
+    - build >= 0.3.2      http://www.codesynthesis.com/projects/build/
+    - g++ >= 3.4.3        http://gcc.gnu.org
+
+  run-time:
+
+    - libcult >= 1.4.1    http://kolpackov.net/projects/libcult/
+
+
+Building libfrontend-elements
+
+  To build in the source directory simply say `make'. You can also
+  build in a separate directory, e.g.,
+
+  $ mkdir libfrontend-elements-i686-pc-linux-gnu
+  $ cd libfrontend-elements-i686-pc-linux-gnu
+  $ make -f ../libfrontend-elements-x.y.z/makefile
+
+
+Installing libfrontend-elements
+
+  Not supported in this version.

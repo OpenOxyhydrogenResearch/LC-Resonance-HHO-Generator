@@ -1,0 +1,47 @@
+#! /usr/bin/env bash
+
+# file      : build/configure
+# author    : Boris Kolpackov <boris@kolpackov.net>
+# copyright : Copyright (c) 2006-2010 Boris Kolpackov
+# license   : GNU GPL v2; see accompanying LICENSE file
+
+# $1  out file
+#
+# bld_root     - build root
+# project_name - project name
+#
+
+source $bld_root/dialog.bash
+
+
+$echo
+$echo
+$echo "configuring '$project_name'"
+$echo
+$echo
+
+
+$echo
+$echo "Would you like to build a multi-threaded version of '$project_name'?"
+$echo
+
+threads=`read_y_n y`
+
+
+$echo
+$echo "Would you like to build the network subsystem of '$project_name'?"
+$echo
+
+network=`read_y_n y`
+
+
+$echo
+$echo "Would you like to build the data representation subsystem of '$project_name'?"
+$echo
+
+dr=`read_y_n y`
+
+
+echo "cult_dr := $dr"            >$1
+echo "cult_threads := $threads" >>$1
+echo "cult_network := $network" >>$1

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<!--
+
+file      : documentation/index.xhtml
+author    : Boris Kolpackov <boris@kolpackov.net>
+copyright : Copyright (c) 2005-2010 Boris Kolpackov
+license   : GNU FDL v1.2; http://kolpackov.net/licenses/fdl-1.2.txt
+
+-->
+
+<head>
+
+  <title>libfrontend-elements/documentation</title>
+
+  <meta name="author" content="Boris Kolpackov"/>
+  <meta name="copyright" content="&copy; 2005-2010 Boris Kolpackov"/>
+  <meta name="keywords" content="c++,library,compiler,frontend"/>
+  <meta name="description" content="libfrontend-elements/documentation"/>
+
+  <link rel="stylesheet" type="text/css" href="default.css"/>
+
+</head>
+
+<body>
+
+<div id="navigation">
+<p>
+<a href=".."><code>libfrontend-elements</code></a> <code>/</code>
+<code>documentation</code>
+</p>
+</div>
+
+<div id="content">
+<p><i>libfrontend-elements</i> consists of the following
+elements:</p>
+
+<ul class="menu">
+  <li><code>context</code></li>
+  <li><code>diagnostic</code></li>
+  <li><code>token-stream</code></li>
+  <li><code>traversal</code></li>
+</ul>
+
+
+<p>Context is essentially a heterogeneous map of names to instances of
+arbitrary types. It is primarily used to allow arbitrary annotations of
+<em>semantic graph</em> nodes and edges, which are often useful
+during code generation.</p>
+
+<p>Diagnostic framework allows to implement consistent and extensible
+compiler diagnostic without incurring significant notational burden.</p>
+
+<p><code>TokenStream</code> is a generic interface which is usually
+implemented by a <em>lexical analyzer</em>.</p>
+
+<p>Traversal is a significant enhancement of a well-known <em>visitor</em>
+idiom which is often used to traverse <em>semantic graphs</em>.</p>
+
+</div>
+
+<div id="docinfo">
+<p>Copyright &copy; 2005-2010 <a title="Boris Kolpackov"
+href="http://kolpackov.net">Boris Kolpackov</a>.</p>
+
+<div class="terms">
+Permission is granted to copy, distribute and/or modify this document under
+the terms of the <a href="http://kolpackov.net/licenses/fdl-1.2.txt">GNU Free
+Documentation License, version 1.2</a>; with no Invariant Sections, no
+Front-Cover Texts and no Back-Cover Texts.
+</div>
+</div>
+
+</body>
+</html>

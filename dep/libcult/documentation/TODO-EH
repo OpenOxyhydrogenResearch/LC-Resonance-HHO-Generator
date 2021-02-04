@@ -1,0 +1,5 @@
+@@ Since there is only one header in eh maybe I should just make it
+   top-level eh.hxx? One disadvantage of this is that I will have to
+   qualify it with cult::exception when I inherit class-specific
+   exception base (maybe it is not too bad actually).
+   

@@ -1,0 +1,91 @@
+Version 1.7.2
+
+  * Fix a bug in C++ indenter.
+
+  * Add support for libbackend-elements bundling.
+
+  * New boost import stub.
+
+Version 1.7.1
+
+  * Add an exception to the licensing terms to allow combining with
+    incompatibly-licensed modules in a single program. See the LICENSE
+    file for details.
+
+Version 1.7.0
+
+  * Support for the '} foo_;' construct in the C++ indenter.
+
+Version 1.6.1
+
+  * Fixed a bug in import stubs.
+  
+  * Got rid of warnings reported by g++-4.3.
+
+Version 1.6.0
+
+  * New Regex::Pattern class that represents a regex pattern (without
+    substitution, unlike Regex::Expression).
+
+  * Removed Regex::perl_s functions. Use the Regex::Expression class
+    which provides extended functionality and better error handling.
+
+Version 1.5.0
+
+  * New regex class.
+
+  * Upgraded to the new boost import stub.
+
+Version 1.4.1
+
+  * Upgraded to the new boost import stub.
+
+Version 1.4.0
+
+  * Support for the do-while construct in the C++ indenter.
+
+Version 1.3.0
+
+  * Support for the C-style comments in the C++ indenter.
+
+Version 1.2.0
+
+  * Upgraded to build-0.3.0.
+
+Version 1.1.0
+
+  * Numerous improvements to the C++ indenter. In particular, it
+    now can properly indent single-line blocks after if, else, etc.
+    as well as suppress new lines between }else, }case, and }catch.
+    It was also optimized for speed.
+
+  * Added a test for the C++ indenter.
+
+
+Version 1.0.4
+
+  * Upgraded to the version-aware libboost import stub.
+
+
+Version 1.0.3
+
+  * Upgraded to build-0.2.0.
+
+  * C++ auto-indenter has been improved to recognize and ignore beginnings
+    of string literals (") and character literals (') in C++-style comments.
+
+
+Version 1.0.2
+
+  * C++ auto-indenter has been improved to support function argument
+    indentation. Both "same-line" and "new-line" styles are supported.
+
+
+Version 1.0.1
+
+  * Build system improvements.
+
+
+Version 1.0.0
+
+  * First public release.

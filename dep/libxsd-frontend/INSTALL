@@ -1,0 +1,28 @@
+Prerequisites
+
+  build-time:
+
+    - build                >= 0.3.7  http://www.codesynthesis.com/projects/build/
+    - g++                  >= 3.4.3  http://gcc.gnu.org
+
+  run-time:
+
+    - libfrontend-elements >= 1.1.4  http://kolpackov.net/projects/libfrontend-elements/
+    - libcult              >= 1.4.6  http://kolpackov.net/projects/libcult/
+    - libxerces-c          >= 2.6.0  http://xerces.apache.org/xerces-c/
+    - libboost_filesystem  >= 1.33.1 http://boost.org
+
+
+Building libxsd-frontend
+
+  To build in the source directory simply run 'make'. You can also
+  build in a separate directory, e.g.,
+
+  $ mkdir libxsd-frontend-i686-pc-linux-gnu
+  $ cd libxsd-frontend-i686-pc-linux-gnu
+  $ make -f ../libxsd-frontend-x.y.z/makefile
+
+
+Installing libxsd-frontend
+
+  Not supported in this version.

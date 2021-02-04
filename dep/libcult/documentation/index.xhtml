@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<!--
+
+file      : documentation/index.xhtml
+author    : Boris Kolpackov <boris@kolpackov.net>
+copyright : Copyright (c) 2005-2010 Boris Kolpackov
+license   : GNU FDL v1.2; http://kolpackov.net/licenses/fdl-1.2.txt
+
+-->
+
+<head>
+
+  <title>libcult/documentation</title>
+
+  <meta name="author" content="Boris Kolpackov"/>
+  <meta name="copyright" content="&copy; 2005-2010 Boris Kolpackov"/>
+  <meta name="keywords" content="c++,library"/>
+  <meta name="description" content="libcult/documentation"/>
+
+  <link rel="stylesheet" type="text/css" href="default.css"/>
+
+</head>
+
+<body>
+
+<div id="navigation">
+<p>
+<a href=".."><code>libcult</code></a> <code>/</code>
+<code>documentation</code>
+</p>
+</div>
+
+<div id="content">
+<p>A number of lower-level libraries are grouped to form a core. Certain
+organizational rules are relaxed for this group. For instance, libraries
+from the core are allowed to have cyclic dependecies and can inject names
+into the top-level namespace <code>cult</code>. Below is the list of
+libraries that currently constitute the core:</p>
+
+<ul class="menu">
+  <li><a href="eh/"><code>eh</code></a></li>
+  <li><a href="meta/"><code>meta</code></a></li>
+  <li><a href="mm/"><code>mm</code></a></li>
+  <li><a href="rtti/"><code>rtti</code></a></li>
+  <li><a href="sched/"><code>sched</code></a></li>
+  <li><a href="trace/"><code>trace</code></a></li>
+  <li><a href="types/"><code>types</code></a></li>
+</ul>
+
+<p>The rest of the libraries normally depend on the core but not
+vice-versa. Below is the list of them:</p>
+
+<ul class="menu">
+  <li><a href="cli/"><code>cli</code></a></li>
+  <!--li><a href="containers/"><code>containers</code></a></li -->
+  <li><a href="dr/"><code>dr</code></a></li>
+  <li><a href="os/"><code>os</code></a></li>
+</ul>
+</div>
+
+
+<div id="docinfo">
+<p>Copyright &copy; 2005-2010 <a title="Boris Kolpackov"
+href="http://kolpackov.net">Boris Kolpackov</a>.</p>
+
+<div class="terms">
+Permission is granted to copy, distribute and/or modify this document under
+the terms of the <a href="http://kolpackov.net/licenses/fdl-1.2.txt">GNU Free
+Documentation License, version 1.2</a>; with no Invariant Sections, no
+Front-Cover Texts and no Back-Cover Texts.
+</div>
+</div>
+
+</body>
+</html>

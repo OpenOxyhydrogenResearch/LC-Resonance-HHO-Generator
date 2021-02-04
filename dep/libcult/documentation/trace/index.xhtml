@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<!--
+
+file      : documentation/trace/index.xhtml
+author    : Boris Kolpackov <boris@kolpackov.net>
+copyright : Copyright (c) 2005-2010 Boris Kolpackov
+license   : GNU FDL v1.2; http://kolpackov.net/licenses/fdl-1.2.txt
+
+-->
+
+<head>
+
+  <title>libcult/documentation/trace</title>
+
+  <meta name="author" content="Boris Kolpackov"/>
+  <meta name="copyright" content="&copy; 2005-2010 Boris Kolpackov"/>
+  <meta name="keywords" content="libcult,c++,tracing"/>
+  <meta name="description" content="libcult/documentation/trace"/>
+
+  <link rel="stylesheet" type="text/css" href="../default.css"/>
+
+</head>
+
+<body>
+
+<div id="navigation">
+<p>
+<a href="../.."><code>libcult</code></a> <code>/</code>
+<a href=".."><code>documentation</code></a> <code>/</code>
+<code>trace</code>
+</p>
+</div>
+
+<div id="content">
+<p>The <em>libcult</em> trace library provides a general-purpose
+program tracing facility. The following code fragment can be found
+in <code>libcult/examples/trace</code>:</p>
+
+<pre class="cxx">
+struct foo {};
+
+std::ostream&amp;
+operator&lt;&lt; (std::ostream&amp; o, foo const&amp;)
+{
+  return o &lt;&lt; "::foo";
+}
+
+namespace trace = cult::trace;
+
+trace::stream tout ("main", 4);
+
+int
+main ()
+{
+  using trace::record;
+
+  trace::log::instance ().level (9);
+
+  record a ("main", 2);
+  a &lt;&lt; "notationally burdensome";
+  tout &lt;&lt; a;
+
+  record b ("main", 2);
+  tout &lt;&lt; (b &lt;&lt; "a bit better, but still burdensome");
+
+  tout &lt;&lt; (record ("main", 2) &lt;&lt; "this is"
+           &lt;&lt; " somewhat"
+           &lt;&lt; " twisted but nice to be able to");
+
+  tout &lt;&lt; "concise, using default level";
+
+  tout &lt;&lt; 9 &lt;&lt; "concise, using custom level";
+
+  foo f;
+
+  tout &lt;&lt; 3 &lt;&lt; f &lt;&lt; " " &lt;&lt; 5;
+}
+</pre>
+
+<p>Along with the proper implementation, a <em>null</em> implementation is
+provided which can be used to completely optimize trace code away. For details
+see the <a href="http://kolpackov.net/pipermail/notes/2004-July/000010.html">
+Inlining code away</a> essay.</p>
+</div>
+
+<div id="docinfo">
+<p>Copyright &copy; 2005-2010 <a title="Boris Kolpackov"
+href="http://kolpackov.net">Boris Kolpackov</a>.</p>
+
+<div class="terms">
+Permission is granted to copy, distribute and/or modify this document under
+the terms of the <a href="http://kolpackov.net/licenses/fdl-1.2.txt">GNU Free
+Documentation License, version 1.2</a>; with no Invariant Sections, no
+Front-Cover Texts and no Back-Cover Texts.
+</div>
+</div>
+
+</body>
+</html>
