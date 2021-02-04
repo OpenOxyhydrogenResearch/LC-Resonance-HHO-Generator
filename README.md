@@ -197,7 +197,7 @@ See <https://rdflib.dev> for the release schedule.
 
 ## Contributing
 
-RDFLib survives and grows via user contributions!
+OPEN OXYHYDROGEN RESEARCH survives and grows via user contributions!
 Please read our [contributing guide](https://rdflib.readthedocs.io/en/stable/developers.html) to get started.
 Please consider lodging Pull Requests here:
 
