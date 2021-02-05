@@ -79,8 +79,8 @@
 //#include <string>
 //#include "xmlParser/xmlParser.h"
 
-//#include "UIX_SCHEMA/uix_schema.hxx"
-//#include "UIX_SCHEMA/uix_schema-pimpl.hxx"
+#include "UIX_Config/uix_config.hxx"
+#include "UIX_Config/uix_config-pimpl.hxx"
 
 
 #if defined(ARDUINO) && ARDUINO >= 100
