@@ -1,0 +1,2 @@
+- name: Version Managment
+  uses: PssbleTrngle/VersionManagment@v2
